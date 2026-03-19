@@ -1,17 +1,18 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
-    "title": "XSS Test",
+    "title": "<svg><script>alert(1)</script></svg>",
+    "description": "<details open ontoggle=alert(document.domain)>",
     "version": "1.0"
   },
   "paths": {
-    "/xss": {
+    "/test": {
       "get": {
-        "summary": "XSS Test",
-        "description": "<script>alert(document.cookie)</script>",
+        "summary": "<math><mtext></mtext><script>alert(2)</script></math>",
+        "description": "<img src=x onerror=alert(3)>",
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "<svg/onload=alert(4)>"
           }
         }
       }
